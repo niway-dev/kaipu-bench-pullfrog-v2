@@ -1,20 +1,19 @@
 # kaipu-bench v2: second fresh copy, for run-to-run variance
 
-This repository is one of six copies of the same benchmark, one per reviewer and round, so that no
-reviewer reads another's comments and no reviewer reads its own earlier work:
+This repository is a round-2 copy of the benchmark, one per reviewer that keeps memory, so that no
+reviewer reads another's comments and none reads its own earlier work:
 
 | Reviewer | Round 1 (2026-11-01) | Round 2 (this set) |
 | --- | --- | --- |
-| [Wachiman](https://github.com/niway-dev/wachiman) | [kaipu-bench-wachi](https://github.com/niway-dev/kaipu-bench-wachi) | [kaipu-bench-wachi-v2](https://github.com/niway-dev/kaipu-bench-wachi-v2) |
+| [Wachiman](https://github.com/niway-dev/wachiman) | [kaipu-bench-wachi](https://github.com/niway-dev/kaipu-bench-wachi) | same repository: extra runs on `head-r<k>` branches |
 | [Pullfrog](https://pullfrog.com) | [kaipu-bench-pullfrog](https://github.com/niway-dev/kaipu-bench-pullfrog) | [kaipu-bench-pullfrog-v2](https://github.com/niway-dev/kaipu-bench-pullfrog-v2) |
 | [CodeRabbit](https://coderabbit.ai) | [kaipu-bench-coderabbit](https://github.com/niway-dev/kaipu-bench-coderabbit) | [kaipu-bench-coderabbit-v2](https://github.com/niway-dev/kaipu-bench-coderabbit-v2) |
 
 **Why a second set.** Pullfrog writes a learnings file and per-PR summaries into the repository
 it reviews, and CodeRabbit keeps per-repository learnings on its servers. A second run in the
 round-1 repository would therefore not be memory-free. A new repository is the only way to make
-round 2 as clean as round 1. Wachiman keeps no memory, so its round-1 repository already holds
-three runs (`head`, `head-r2`, `head-r3` on the same commit); the Wachiman v2 copy exists so the
-three reviewers are compared on identical setups.
+round 2 as clean as round 1. Wachiman keeps no memory, so it needs no copy: its round-1 repository
+holds every run on `head`, `head-r2`, `head-r3`, … branches that point at the same commit.
 
 **What changed from round 1.** Same commits, same pull request titles and bodies, same model
 (Claude Opus 5.5 at effort `high` where the reviewer lets us choose). Two setup fixes:
